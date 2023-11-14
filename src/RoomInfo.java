@@ -30,8 +30,7 @@ public class RoomInfo {
         int entranceNum;
         if (apartNum % (4 * floorsQuantity) == 0) {
             entranceNum = apartNum / (4 * floorsQuantity);
-        }
-        else {
+        } else {
             entranceNum = apartNum / (4 * floorsQuantity) + 1;
         }
         //Находим номер этажа
