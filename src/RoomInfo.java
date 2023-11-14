@@ -3,36 +3,36 @@ import java.util.Scanner;
 public class RoomInfo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите количество подъездов: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРґСЉРµР·РґРѕРІ: ");
         int entrancesQuantity = scanner.nextInt();
 
-        System.out.print("Введите количество этажей: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌС‚Р°Р¶РµР№: ");
         int floorsQuantity = scanner.nextInt();
 
-        System.out.print("Введите номер квартиры: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹: ");
         int apartNumber = scanner.nextInt();
 
         scanner.close();
 
-        //Перед тем, как искать информацию по квартире, проверям, что она есть в доме
+        //РџРµСЂРµРґ С‚РµРј, РєР°Рє РёСЃРєР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕ РєРІР°СЂС‚РёСЂРµ, РїСЂРѕРІРµСЂСЏРј, С‡С‚Рѕ РѕРЅР° РµСЃС‚СЊ РІ РґРѕРјРµ
         int roomsPerFloor = 4;
         if ((apartNumber >= 1) | (apartNumber <= (roomsPerFloor * floorsQuantity * entrancesQuantity))) {
-            //Находим расположение квартиры
+            //РќР°С…РѕРґРёРј СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РєРІР°СЂС‚РёСЂС‹
             String apartLoc = null;
             switch (apartNumber % roomsPerFloor) {
-                case 0 -> apartLoc = "Справа от лифта, вправо";
-                case 1 -> apartLoc = "Слева от лифта, влево";
-                case 2 -> apartLoc = "Слева от лифта, вправо";
-                case 3 -> apartLoc = "Справа от лифта, влево";
+                case 0 -> apartLoc = "РЎРїСЂР°РІР° РѕС‚ Р»РёС„С‚Р°, РІРїСЂР°РІРѕ";
+                case 1 -> apartLoc = "РЎР»РµРІР° РѕС‚ Р»РёС„С‚Р°, РІР»РµРІРѕ";
+                case 2 -> apartLoc = "РЎР»РµРІР° РѕС‚ Р»РёС„С‚Р°, РІРїСЂР°РІРѕ";
+                case 3 -> apartLoc = "РЎРїСЂР°РІР° РѕС‚ Р»РёС„С‚Р°, РІР»РµРІРѕ";
             }
-            // Находим номер подъезда
+            // РќР°С…РѕРґРёРј РЅРѕРјРµСЂ РїРѕРґСЉРµР·РґР°
             int entranceNum;
             if (apartNumber % (roomsPerFloor * floorsQuantity) == 0) {
                 entranceNum = apartNumber / (roomsPerFloor * floorsQuantity);
             } else {
                 entranceNum = apartNumber / (roomsPerFloor * floorsQuantity) + 1;
             }
-            //Находим номер этажа
+            //РќР°С…РѕРґРёРј РЅРѕРјРµСЂ СЌС‚Р°Р¶Р°
             int floorNum;
             if (apartNumber % roomsPerFloor != 0) {
                 floorNum = apartNumber / roomsPerFloor + 1;
@@ -40,11 +40,11 @@ public class RoomInfo {
                 floorNum = apartNumber / roomsPerFloor;
                 floorNum -= (entranceNum - 1) * floorsQuantity;
             }
-            //Выводим результат
-            System.out.println(apartNumber + " кв - " + entranceNum + " подъезд, " + floorNum + " этаж, " + apartLoc);
+            //Р’С‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚
+            System.out.println(apartNumber + " РєРІ - " + entranceNum + " РїРѕРґСЉРµР·Рґ, " + floorNum + " СЌС‚Р°Р¶, " + apartLoc);
         } else {
-            //Если квартиры нет, выводим сообщение об этом
-            System.out.println("Такой квартиры в доме нет");
+            //Р•СЃР»Рё РєРІР°СЂС‚РёСЂС‹ РЅРµС‚, РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РѕР± СЌС‚РѕРј
+            System.out.println("РўР°РєРѕР№ РєРІР°СЂС‚РёСЂС‹ РІ РґРѕРјРµ РЅРµС‚");
         }
     }
 }
