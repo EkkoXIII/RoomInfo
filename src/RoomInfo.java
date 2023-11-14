@@ -8,7 +8,6 @@ public class RoomInfo {
 
         System.out.print("Введите количество этажей: ");
         int floorsQuantity = scanner.nextInt();
-        scanner.close();
 
         int apartNum = 0;
         int maxApartQuantity = 4*floorsQuantity*entrancesQuantity;
@@ -16,6 +15,8 @@ public class RoomInfo {
             System.out.print("Введите номер квартиры от 1 до "+maxApartQuantity+" :");
             apartNum = scanner.nextInt();
         }
+        scanner.close();
+
         //Находим расположение квартиры
         String apartLoc = null;
         switch (apartNum % 4) {
