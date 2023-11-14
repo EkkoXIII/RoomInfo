@@ -7,7 +7,7 @@ public class RoomInfo {
         int entrancesQuantity = scanner.nextInt();
 
         System.out.println("¬ведите количество этажей: ");
-        int floorsQuantity = scanner.nextInt();
+        int floorsQuantity= scanner.nextInt();
         scanner.close();
 
         int apartNum = 0;
