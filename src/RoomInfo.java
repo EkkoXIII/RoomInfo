@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class RoomInfo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите количество подъездов: ");
+        System.out.print("Введите количество подъездов: ");
         int entrancesQuantity = scanner.nextInt();
 
-        System.out.println("Введите количество этажей: ");
+        System.out.print("Введите количество этажей: ");
         int floorsQuantity = scanner.nextInt();
         scanner.close();
 
         int apartNum = 0;
-        int maxApart = 4*floorsQuantity*entrancesQuantity;
-        while ((apartNum>maxApart)|(apartNum==0)) {
-            System.out.println("Введите номер квартиры от 1 до "+maxApart+" :");
+        int maxApartQuantity = 4*floorsQuantity*entrancesQuantity;
+        while ((apartNum>maxApartQuantity)|(apartNum==0)) {
+            System.out.print("Введите номер квартиры от 1 до "+maxApartQuantity+" :");
             apartNum = scanner.nextInt();
         }
         //Находим расположение квартиры
