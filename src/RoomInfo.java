@@ -11,6 +11,7 @@ public class RoomInfo {
 
         int apartNum = 0;
         int maxApartQuantity = 4*floorsQuantity*entrancesQuantity;
+
         while ((apartNum>maxApartQuantity)|(apartNum==0)) {
             System.out.print("Введите номер квартиры от 1 до "+maxApartQuantity+" :");
             apartNum = scanner.nextInt();
