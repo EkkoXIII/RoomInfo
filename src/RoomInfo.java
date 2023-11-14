@@ -10,10 +10,10 @@ public class RoomInfo {
         int floorsQuantity = scanner.nextInt();
 
         int apartNum = 0;
-        int maxApartQuantity = 4*floorsQuantity*entrancesQuantity;
+        int maxApartQuantity = 4 * floorsQuantity * entrancesQuantity;
 
-        while ((apartNum>maxApartQuantity)|(apartNum==0)) {
-            System.out.print("Введите номер квартиры от 1 до "+maxApartQuantity+" :");
+        while ((apartNum > maxApartQuantity) | (apartNum == 0)) {
+            System.out.print("Введите номер квартиры от 1 до " + maxApartQuantity + " :");
             apartNum = scanner.nextInt();
         }
         scanner.close();
@@ -28,20 +28,21 @@ public class RoomInfo {
         }
         // Находим номер подъезда
         int entranceNum;
-        if (apartNum%(4*floorsQuantity)==0)
-            entranceNum = apartNum/(4*floorsQuantity);
-        else
-            entranceNum = apartNum/(4*floorsQuantity)+1;
-        //Находим номер этажа
-        int floorNum;
-        if (apartNum%4!=0) {
-            floorNum = apartNum / 4 + 1;
+        if (apartNum % (4 * floorsQuantity) == 0) {
+            entranceNum = apartNum / (4 * floorsQuantity);
         }
         else {
+            entranceNum = apartNum / (4 * floorsQuantity) + 1;
+        }
+        //Находим номер этажа
+        int floorNum;
+        if (apartNum % 4 != 0) {
+            floorNum = apartNum / 4 + 1;
+        } else {
             floorNum = apartNum / 4;
             floorNum -= (entranceNum - 1) * floorsQuantity;
         }
         //Выводим результат
-        System.out.println(apartNum+" кв - "+entranceNum+" подъезд, "+floorNum+" этаж, "+apartLoc);
+        System.out.println(apartNum + " кв - " + entranceNum + " подъезд, " + floorNum + " этаж, " + apartLoc);
     }
 }
