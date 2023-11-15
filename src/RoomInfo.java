@@ -26,7 +26,6 @@ public class RoomInfo {
 
         //Если квартира в доме есть, то продолжаем выполнение
         //Находим расположение квартиры
-
         String apartLoc = null;
         switch (apartNumber % roomsPerFloor) {
             case 0 -> apartLoc = "Справа от лифта, вправо";
@@ -36,7 +35,6 @@ public class RoomInfo {
         }
 
         // Находим номер подъезда
-
         int entranceNum;
 
         if (apartNumber % (roomsPerFloor * floorsQuantity) == 0) {
@@ -46,7 +44,6 @@ public class RoomInfo {
         }
 
         //Находим номер этажа
-
         int floorNum;
 
         if (apartNumber % roomsPerFloor == 0) {
@@ -56,7 +53,6 @@ public class RoomInfo {
         }
 
         //Выводим результат
-
         System.out.println(apartNumber + " кв - " + entranceNum + " подъезд, " + floorNum + " этаж, " + apartLoc);
     }
 }
