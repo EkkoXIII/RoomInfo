@@ -16,7 +16,7 @@ public class RoomInfo {
 
         //Перед тем, как искать информацию по квартире, проверям, что она есть в доме
         int roomsPerFloor = 4;
-        if ((apartNumber >= 1) | (apartNumber <= (roomsPerFloor * floorsQuantity * entrancesQuantity))) {
+        if ((apartNumber >= 1) && (apartNumber <= (roomsPerFloor * floorsQuantity * entrancesQuantity))) {
             //Находим расположение квартиры
             String apartLoc = null;
             switch (apartNumber % roomsPerFloor) {
