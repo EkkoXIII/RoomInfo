@@ -42,7 +42,7 @@ public class RoomInfo {
         if (apartNumber % roomsPerFloor == 0) {
             floorNum = apartNumber / roomsPerFloor - (entranceNum - 1) * floorsQuantity;
         } else {
-            floorNum = apartNumber / roomsPerFloor + 1 - (entranceNum - 1) * floorsQuantity;
+            floorNum = apartNumber / roomsPerFloor - (entranceNum - 1) * floorsQuantity + 1;
         }
         //Выводим результат
         System.out.println(apartNumber + " кв - " + entranceNum + " подъезд, " + floorNum + " этаж, " + apartLoc);
