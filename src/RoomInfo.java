@@ -21,6 +21,7 @@ public class RoomInfo {
             System.out.println("Такой квартиры в доме нет");
             return;
         }
+        //Если квартира в доме есть, то продолжаем выполнение
         //Находим расположение квартиры
         String apartLoc = null;
         switch (apartNumber % roomsPerFloor) {
