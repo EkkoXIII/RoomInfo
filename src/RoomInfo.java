@@ -40,11 +40,9 @@ public class RoomInfo {
         //Находим номер этажа
         int floorNum;
         if (apartNumber % roomsPerFloor == 0) {
-            floorNum = apartNumber / roomsPerFloor;
-            floorNum -= (entranceNum - 1) * floorsQuantity;
+            floorNum = apartNumber / roomsPerFloor - (entranceNum - 1) * floorsQuantity;
         } else {
-            floorNum = apartNumber / roomsPerFloor+1;
-            floorNum -= (entranceNum - 1) * floorsQuantity;
+            floorNum = apartNumber / roomsPerFloor + 1 - (entranceNum - 1) * floorsQuantity;
         }
         //Выводим результат
         System.out.println(apartNumber + " кв - " + entranceNum + " подъезд, " + floorNum + " этаж, " + apartLoc);
