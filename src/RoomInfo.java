@@ -16,7 +16,6 @@ public class RoomInfo {
 
         //Перед тем, как искать информацию по квартире, проверяем, что она есть в доме
         //Если нет - выводим сообщение и завершаем выполнение
-
         int roomsPerFloor = 4;
 
         if ((apartNumber < 1) || (apartNumber > (roomsPerFloor * floorsQuantity * entrancesQuantity))) {
